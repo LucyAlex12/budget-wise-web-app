@@ -15,14 +15,34 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Inter, "Segoe UI", Arial, sans-serif;
-  background: var(--ink);
+  background:
+    radial-gradient(ellipse 32rem 26rem at var(--cursor-x, 18%) var(--cursor-y, 18%), rgba(245, 158, 11, 0.22), transparent 72%),
+    radial-gradient(ellipse 28rem 24rem at 84% 16%, rgba(15, 118, 110, 0.24), transparent 70%),
+    linear-gradient(135deg, #07130f, #101820 44%, #10251e);
   color: var(--white);
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  animation: moneyFlow 15s linear infinite;
+  background-image:
+    linear-gradient(90deg, transparent 0 18%, rgba(245, 158, 11, 0.1) 18% 19%, transparent 19% 38%),
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 180px 100%, 64px 64px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
 }
 
 .app {
   display: grid;
   grid-template-columns: 380px 1fr;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 .summary {
@@ -59,7 +79,13 @@ form,
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 8px;
+  backdrop-filter: blur(16px);
   padding: 16px;
+}
+
+@keyframes moneyFlow {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 360px 0, 128px 64px; }
 }
 
 .metrics span,
