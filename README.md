@@ -1,6 +1,6 @@
-# Budget Wise Web App
+# Budget Wise Naija Web App
 
-A lightweight personal budgeting app that helps users track income, expenses, and savings goals directly in the browser.
+A lightweight Nigerian personal budgeting app that helps users track income, expenses, and savings goals in naira directly in the browser.
 
 ## Why it matters
 
@@ -12,7 +12,7 @@ Open `index.html` in a browser.
 
 ## Features
 
-- add income or expenses
+- add income or expenses in naira
 - see current balance
 - track savings target progress
 - persist entries in `localStorage`

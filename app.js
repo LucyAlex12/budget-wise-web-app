@@ -1,14 +1,15 @@
 const demoEntries = [
-  { label: "Freelance dashboard", amount: 650, type: "income", category: "Freelance" },
-  { label: "Part-time salary", amount: 900, type: "income", category: "Salary" },
-  { label: "Groceries", amount: 180, type: "expense", category: "Food" },
-  { label: "Online course", amount: 75, type: "expense", category: "Learning" },
-  { label: "Transport", amount: 60, type: "expense", category: "Transport" }
+  { label: "Freelance dashboard", amount: 250000, type: "income", category: "Freelance" },
+  { label: "Monthly allowance", amount: 150000, type: "income", category: "Salary" },
+  { label: "Rice and stew ingredients", amount: 42000, type: "expense", category: "Foodstuff" },
+  { label: "Online course", amount: 35000, type: "expense", category: "School" },
+  { label: "Transport", amount: 18000, type: "expense", category: "Transport" },
+  { label: "Monthly data bundle", amount: 12000, type: "expense", category: "Data" }
 ];
 
 let entries = JSON.parse(localStorage.getItem("budgetEntriesV2")) || demoEntries.slice(0, 2);
 
-const money = value => `$${value.toLocaleString()}`;
+const money = value => `₦${value.toLocaleString("en-NG")}`;
 const save = () => localStorage.setItem("budgetEntriesV2", JSON.stringify(entries));
 
 function totals() {
