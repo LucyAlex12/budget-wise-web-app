@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Budget Wise</title>
+  <title>Budget Wise | Money Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="app">
     <section class="summary">
-      <p>Personal finance</p>
+      <p class="eyebrow">Personal finance lab</p>
       <h1>Budget Wise</h1>
       <div class="metrics">
         <article><span>Balance</span><strong id="balance">$0</strong></article>
@@ -18,18 +18,38 @@
       </div>
       <label>Savings goal <input id="goal" type="number" value="1000"></label>
       <progress id="progress" value="0" max="100"></progress>
+      <p id="goalMessage">Set a savings goal to start.</p>
     </section>
 
     <section class="workspace">
       <form id="entryForm">
         <input id="label" placeholder="Description" required>
-        <input id="amount" type="number" placeholder="Amount" required>
+        <input id="amount" type="number" min="1" step="1" placeholder="Amount" required>
+        <select id="category">
+          <option>Salary</option>
+          <option>Freelance</option>
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Learning</option>
+          <option>Fun</option>
+        </select>
         <select id="type">
           <option value="income">Income</option>
           <option value="expense">Expense</option>
         </select>
-        <button>Add entry</button>
+        <button>Add</button>
       </form>
+
+      <section class="insights">
+        <article><span>Top spend category</span><strong id="topCategory">None</strong></article>
+        <article><span>Budget health</span><strong id="health">Getting started</strong></article>
+      </section>
+
+      <div class="toolbar">
+        <button id="seedDemo">Load demo month</button>
+        <button id="clearAll">Clear all</button>
+      </div>
+
       <div id="entries"></div>
     </section>
   </main>
