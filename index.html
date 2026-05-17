@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Budget Wise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="summary">
+      <p>Personal finance</p>
+      <h1>Budget Wise</h1>
+      <div class="metrics">
+        <article><span>Balance</span><strong id="balance">$0</strong></article>
+        <article><span>Income</span><strong id="income">$0</strong></article>
+        <article><span>Expenses</span><strong id="expenses">$0</strong></article>
+      </div>
+      <label>Savings goal <input id="goal" type="number" value="1000"></label>
+      <progress id="progress" value="0" max="100"></progress>
+    </section>
+
+    <section class="workspace">
+      <form id="entryForm">
+        <input id="label" placeholder="Description" required>
+        <input id="amount" type="number" placeholder="Amount" required>
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button>Add entry</button>
+      </form>
+      <div id="entries"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
